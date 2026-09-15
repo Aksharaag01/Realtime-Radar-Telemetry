@@ -39,7 +39,7 @@ OpenEaagles supplies the object model, slot table configuration mechanism, and t
     | External Consumer |                   | Real-Time Logger  |
     | / Radar Visualizer|                   |    & Evaluator    |
     +-------------------+                   +-------------------+
-'''
+```
 ### Component Breakdown
 
 | Component | Role / Description |
