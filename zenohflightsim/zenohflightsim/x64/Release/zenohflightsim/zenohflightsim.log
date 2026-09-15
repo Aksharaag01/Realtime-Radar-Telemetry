@@ -1,0 +1,9 @@
+﻿  zenohflightsim.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (base.vcxproj, dafif.vcxproj, graphics.vcxproj, gui_glut.vcxproj, instruments.vcxproj, interop.vcxproj, interop_dis.vcxproj, iodevice.vcxproj, linearsystem.vcxproj, map_rpf.vcxproj, models.vcxproj, otw.vcxproj, recorder.vcxproj, terrain.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (dafif.vcxproj, graphics.vcxproj, gui_glut.vcxproj, instruments.vcxproj, interop.vcxproj, interop_dis.vcxproj, iodevice.vcxproj, linearsystem.vcxproj, map_rpf.vcxproj, models.vcxproj, otw.vcxproj, recorder.vcxproj, simulation.vcxproj, terrain.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Generating code
+  122 of 126 functions (96.8%) were compiled, the rest were copied from previous compilation.
+    3 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  zenohflightsim.vcxproj -> C:\Users\Asus\source\repos\zenohflightsim\x64\Release\zenohflightsim.exe
