@@ -5,7 +5,7 @@
 
 ---
 
-## 📌 Overview
+##  Overview
 
 This project examines whether a legacy, slot-configured C++ constructive-simulation framework, **OpenEaagles**, can be extended with a modern, low-latency data-distribution middleware, **Zenoh-C**, to build a decoupled, real-time-observable simulation pipeline, using a Surface-to-Air Missile (SAM) intercept scenario as an end-to-end proof of concept. 
 
@@ -13,31 +13,32 @@ OpenEaagles supplies the object model, slot table configuration mechanism, and t
 
 ---
 
-## 🛠️ Architecture & Core Components
+## Architecture & Core Components
+
+```text
 +-----------------------------------------------------------------+
 |                   OpenEaagles Simulation Loop                   |
 |  +---------------------+           +--------------------------+ |
-|  |     MyJetAircraft   |           |       MySamMissile       | |
+|  |    MyJetAircraft    |           |       MySamMissile       | |
 |  |  (Flight Dynamics)  |           | (PN Guidance Algorithm)  | |
 |  +----------+----------+           +------------+-------------+ |
 +-------------|-----------------------------------|---------------+
-|                                   |
-v                                   v
+              |                                   |
+              v                                   v
 +-----------------------------------------------------------------+
 |                          ZenohBridge                            |
 |        (Lock-free SPSC Queue & Thread-Safe Telemetry Publisher) |
 +-----------------------------------------------------------------+
-|
-Zenoh-C Pub/Sub Transport Layer
-|
-+-------------------+-------------------+
-|                                       |
-v                                       v
-+-------------------+                   +-------------------+
-| External Consumer |                   | Real-Time Logger  |
-| / Radar Visualizer|                   |   & Evaluator     |
-+-------------------+                   +-------------------+
-
+                                  |
+                   Zenoh-C Pub/Sub Transport Layer
+                                  |
+              +-------------------+-------------------+
+              |                                       |
+              v                                       v
+    +-------------------+                   +-------------------+
+    | External Consumer |                   | Real-Time Logger  |
+    | / Radar Visualizer|                   |    & Evaluator    |
+    +-------------------+                   +-------------------+
 ### Component Breakdown
 
 | Component | Role / Description |
@@ -51,7 +52,7 @@ v                                       v
 
 ---
 
-## ⚡ Key Features
+##  Key Features
 
 * **Decoupled Telemetry:** Real-time streaming of aircraft state parameters (`position`, `velocity`, `altitude`, `heading`, `acceleration`) at 25 Hz / 40 ms cycles.
 * **Proportional Navigation (PN):** Real-time SAM guidance tracking that continuously updates missile heading based on Line-of-Sight (LOS) angle rate.
@@ -61,7 +62,7 @@ v                                       v
 
 ---
 
-## ⚙️ Tech Stack & Dependencies
+##  Tech Stack & Dependencies
 
 | Category | Technology / Library | Purpose |
 | :--- | :--- | :--- |
@@ -75,7 +76,7 @@ v                                       v
 
 ---
 
-## 🐛 Technical Challenges & Solutions
+##  Technical Challenges & Solutions
 
 * **Library Linking Order Issues:** Fixed unresolved reference errors by ensuring OpenEaagles simulation libraries were specified in proper dependency order relative to base libraries during build[cite: 1].
 * **Slot Table Mismatch:** Resolved compilation errors in `MySamMissile` by ensuring exact correspondence between `BEGIN_SLOTTABLE` entries and `BEGIN_SLOT_MAP` handlers[cite: 1].
@@ -83,7 +84,7 @@ v                                       v
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### 1. Prerequisites
 Ensure the following tools and compilers are available on your system:
